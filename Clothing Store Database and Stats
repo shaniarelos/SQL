@@ -1,0 +1,48 @@
+-- Create your own store
+
+CREATE TABLE store
+(id INTEGER PRIMARY KEY, item TEXT, category TEXT, price INTEGER, popularity INTEGER);
+
+INSERT INTO store VALUES (1, "Cherrelle Blazer", "Blazers", 228, 50);
+INSERT INTO store VALUES (2, "Vogue Blazer", "Blazers", 248, 85);
+INSERT INTO store VALUES (3, "Agency Blazer", "Blazers", 248, 75);
+INSERT INTO store VALUES (4, "Press Blazer", "Blazers", 228, 91);
+INSERT INTO store VALUES (5, "Logan Blazer", "Blazers", 228, 48);
+
+INSERT INTO store VALUES (6, "Pelli Shirt Jacket", "Jackets & Coats", 168, 70);
+INSERT INTO store VALUES (7, "Diaz Jacket", "Jackets & Coats", 228, 86);
+INSERT INTO store VALUES (8, "Tabloid Trench Coat", "Jackets & Coats", 268, 83);
+INSERT INTO store VALUES (9, "Arc Bomber", "Jackets & Coats", 198, 84);
+INSERT INTO store VALUES (10, "The Ali Denim Jacket", "Jackets & Coats", 168, 78);
+
+INSERT INTO store VALUES (11, "The Ganna™ Shirt Jacket", "Shirt Jackets", 198, 90);
+INSERT INTO store VALUES (12, "Little Cropped Jacket", "Shirt Jackets", 88, 95);
+INSERT INTO store VALUES (13, "Pelli Shirt Jacket", "Shirt Jackets", 178, 78);
+INSERT INTO store VALUES (14, "Cozy Fleece Mega Shirt Jacket", "Shirt Jackets", 78, 88);
+INSERT INTO store VALUES (15, "Ava Jacket", "Shirt Jackets", 198, 68);
+
+--Display the database ordered by price.
+
+SELECT * FROM store
+ORDER BY price DESC;
+
+--What are the top 3 popular items in Blazers Category?
+
+SELECT item, popularity, price 
+FROM store 
+WHERE category ='Blazers'
+ORDER BY popularity desc
+LIMIT 3;
+
+--What is the average price of items in Shirt Jackets Category?
+
+SELECT AVG(price) "Average Shirt Jackets Item Price"
+FROM store
+WHERE category ='Shirt Jackets';
+
+--What are the lowest priced item in the store?
+SELECT item, price
+FROM store
+ORDER BY price asc
+LIMIT 1;
+
