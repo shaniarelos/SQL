@@ -40,7 +40,7 @@ SELECT AVG(price) "Average Shirt Jackets Item Price"
 FROM store
 WHERE category ='Shirt Jackets';
 
---What are the lowest priced item in the store?
+--What is the lowest priced item in the store?
 SELECT item, price
 FROM store
 ORDER BY price asc
